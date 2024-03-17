@@ -14,13 +14,13 @@ const Getstarted = () => {
 
     return (
         <View>
-            <View className="ml-4">
-
-                <Popup isVisible={isModalVisible} className=" bg-white " />
+            <View>
+                <Popup isVisible={isModalVisible} />
             </View>
 
 
             <View className="flex justify-between items-center h-[100%]">
+            
                 <View className="flex justify-center items-center mt-32" >
                     <Image source={require('../../assets/Group 8.png')} />
 
