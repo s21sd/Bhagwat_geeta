@@ -36,7 +36,9 @@ import {
 } from 'react-native';
 import { booksNames } from '../Constants/Booknames';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 const ChapterList = () => {
+
     return (
         <View>
             <FlatList
@@ -54,12 +56,12 @@ const ChapterList = () => {
     );
 };
 const ChapterCard = ({ item }) => {
+    const navigation = useNavigation();
     return (
         <View>
-            <TouchableOpacity className="flex py-1 space-y-2">
+            <TouchableOpacity className="flex py-1 space-y-2" onPress={() => navigation.navigate("Readbook")}>
                 <View className="bg-white shadow rounded-[25px]">
                     <Image
-
                         source={require("../../assets/image 2.png")}
                         contentFit='cover'
                         style={{ width: wp(44), height: wp(52) }}
