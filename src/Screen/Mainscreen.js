@@ -8,6 +8,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import Buttomnav from '../Component/Buttomnav';
 const Mainscreen = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ flex: 1 }}>
 
@@ -23,6 +24,7 @@ const Mainscreen = () => {
                         className="rounded-b-[45px]"
                     />
                     <TouchableOpacity
+                        onPress={() => navigation.navigate('Getstarted')}
                         style={{
                             width: hp(5.5),
                             height: hp(5.5),
@@ -73,9 +75,9 @@ const Mainscreen = () => {
                 </View>
             </ScrollView>
 
-            <View style={{ position: 'fixed', width: '100%' }}>
+            {/* <View style={{ position: 'fixed', width: '100%' }}>
                 <Buttomnav />
-            </View>
+            </View> */}
         </View>
     )
 }

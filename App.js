@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { useState } from 'react';
 import Home from './src/Screen/Home';
 import Welcome from './src/Screen/Welcome';
 import { NavigationContainer } from '@react-navigation/native';
@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Mainscreen from './src/Screen/Mainscreen';
 import Getstarted from './src/Component/Getstarted';
 import Readbook from './src/Component/Readbook';
+import BottomNavigator from './src/Component/BottomNavigator';
+import VerseRead from './src/Screen/VerseRead';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -16,17 +18,10 @@ export default function App() {
         <Stack.Screen name="Getstarted" component={Getstarted} />
         <Stack.Screen name="Mainscreen" component={Mainscreen} />
         <Stack.Screen name="Readbook" component={Readbook} />
-
+        <Stack.Screen name="VerseRead" component={VerseRead} />
       </Stack.Navigator>
     </NavigationContainer>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

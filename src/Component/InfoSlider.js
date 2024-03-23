@@ -56,10 +56,10 @@ const InfoSlider = () => {
 
                 </Swiper>
                 <View className="flex justify-between items-center me-4 flex-row ">
-                    <TouchableOpacity onPress={onSliped}>
-                        <Text className="text-white" style={{ fontSize: hp(3) }}>Skip</Text>
+                    <TouchableOpacity className="cursor-pointer" onPress={onSliped} >
+                        <Text className="text-white " style={{ fontSize: hp(3) }}>Skip</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={changeIndex} className="flex flex-row justify-center items-center gap-1">
+                    <TouchableOpacity onPress={changeIndex} className="flex flex-row justify-center items-center gap-1 cursor-pointer">
                         <Text className="text-white" style={{ fontSize: hp(3) }}>Next</Text>
                         <AntDesign name="arrowright" size={20} color="white" />
                     </TouchableOpacity>

@@ -37,7 +37,7 @@ import {
 import { booksNames } from '../Constants/Booknames';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/native';
-const ChapterList = () => {
+const VerseList = () => {
 
     return (
         <View>
@@ -50,7 +50,7 @@ const ChapterList = () => {
                 }}
                 data={booksNames}
                 renderItem={({ item, index }) => <ChapterCard item={item} />}
-                keyExtractor={item => item.name}
+                keyExtractor={item => item.chaperNo}
             />
         </View>
     );
@@ -59,37 +59,21 @@ const ChapterCard = ({ item }) => {
     const navigation = useNavigation();
     return (
         <View>
-            <TouchableOpacity className="flex py-1 space-y-2" onPress={() => navigation.navigate("Readbook", {
-                chName: `${item?.translation}`,
-                chaperNo: item.chapter_number,
-                summary: `${item.summary.en}`
-
-            })}>
+            <TouchableOpacity className="flex py-1 space-y-2" onPress={() => navigation.navigate("VerseRead")}>
                 <View className="bg-white shadow rounded-[25px]">
                     <Image
-                        source={require("../../assets/image 2.png")}
+                        source={require("../../assets/Rectangle 7.png")}
                         contentFit='cover'
                         style={{ width: wp(44), height: wp(52) }}
                         className="rounded-[25px]"
                     />
                 </View>
-                <Text
-                    style={{ fontSize: hp(2) }}
-                    className="text-gray-600 font-bold ml-1 mb-1 tracking-wide"
-                >
-                    Chapter:
-                    {
-                        item?.chapter_number
-                    }
-                </Text>
 
                 <Text
                     style={{ fontSize: hp(1.8) }}
-                    className="text-gray-500 font-bold ml-1 mb-1 tracking-wide"
+                    className="text-black font-bold ml-1 mb-1 tracking-wide"
                 >
-                    {
-                        item?.translation?.length > 20 ? item.translation.slice(0, 20) + '...' : item.translation
-                    }
+                    Verse 1
                 </Text>
             </TouchableOpacity>
         </View>
@@ -97,4 +81,4 @@ const ChapterCard = ({ item }) => {
 }
 
 
-export default ChapterList;
+export default VerseList;
