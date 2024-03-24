@@ -85,7 +85,7 @@ const Readbook = ({ route }) => {
 
 
                     <View className="mb-10">
-                        <VerseList />
+                        <VerseList chaperNo={chaperNo} />
                     </View>
                 </View>
             </ScrollView>

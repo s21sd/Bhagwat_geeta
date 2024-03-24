@@ -1,28 +1,3 @@
-// import React from 'react'
-// import { View, Text, ScrollView, TouchableOpacity, Image, FlatList } from 'react-native'
-// import { AntDesign } from '@expo/vector-icons';
-// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-// import { useNavigation } from '@react-navigation/native';
-// const ChapterList = () => {
-//     return (
-//         <View>
-//             <FlatList
-//                 data=""
-//                 numColumns={2}
-//                 keyExtractor={item => item.name}
-//                 showsVerticalScrollIndicator={false}
-//                 contentContainerStyle={{ paddingBottom: 60, paddingTop: 20 }}
-//                 columnWrapperStyle={{
-//                     justifyContent: 'space-between'
-//                 }}
-//                 renderItem={({ item, index }) => <Text>HELLO</Text>}
-//             />
-//         </View>
-//     )
-// }
-
-// export default ChapterList
-
 import React from 'react';
 import {
     SafeAreaView,
