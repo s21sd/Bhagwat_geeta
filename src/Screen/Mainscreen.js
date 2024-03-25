@@ -11,8 +11,9 @@ const Mainscreen = () => {
     const navigation = useNavigation();
     return (
         <View style={{ flex: 1 }}>
+         {/* <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} /> */}
 
-            <ScrollView className="flex-1">
+            <ScrollView nestedScrollEnabled={true} className="flex-1">
                 <View>
                     <Image
                         source={require('../../assets/image 2.png')}

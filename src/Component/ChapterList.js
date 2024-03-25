@@ -17,6 +17,8 @@ const ChapterList = () => {
     return (
         <View>
             <FlatList
+                nestedScrollEnabled={true}
+                scrollEnabled={false}
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 60 }}
