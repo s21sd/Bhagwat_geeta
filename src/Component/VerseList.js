@@ -7,7 +7,8 @@ import {
     Image,
     Text,
     StatusBar,
-    TouchableOpacity
+    TouchableOpacity,
+    ActivityIndicator
 } from 'react-native';
 import { booksNames } from '../Constants/Booknames';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -43,16 +44,23 @@ const VerseList = ({ chaperNo }) => {
     }, [chaperNo]);
     return (
         <View>
-            <FlatList
-                nestedScrollEnabled={true}
-                scrollEnabled={false}
-                numColumns={1}
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={{ paddingBottom: 60 }}
-                data={data}
-                renderItem={({ item, index }) => <ChapterCard item={item} />}
-                keyExtractor={item => item.verse_number}
-            />
+            {
+                data.length > 0 ? <FlatList
+                    nestedScrollEnabled={true}
+                    scrollEnabled={false}
+                    numColumns={1}
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ paddingBottom: 60 }}
+                    data={data}
+                    renderItem={({ item, index }) => <ChapterCard item={item} />}
+                    keyExtractor={item => item.verse_number}
+                /> :
+                    <View className="flex justify-center items-center mt-3">
+                        <ActivityIndicator size={26} color="red" />
+                    </View>
+
+            }
+
         </View>
     );
 }
@@ -62,7 +70,9 @@ const ChapterCard = ({ item }) => {
     return (
         <View>
             <TouchableOpacity className="flex py-2 px-2 space-y-2 bg-white shadow rounded-[25px] mt-2" onPress={() => navigation.navigate("VerseRead", {
-                index: item.verse_number
+                index: item.verse_number,
+                chaperNo: item.chapter_number
+
             })}>
                 <View className=" flex flex-row justify-between items-center">
                     <View className="flex flex-row justify-center items-center">

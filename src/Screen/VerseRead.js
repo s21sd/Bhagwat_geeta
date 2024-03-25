@@ -5,13 +5,13 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 const VerseRead = ({ route }) => {
-    const { item } = route.params
-    console.log(item);
+    // const { index, chaperNo } = route.params
+    // console.log(index, chaperNo);
     const navigation = useNavigation();
     return (
         <View style={{ flex: 1 }} >
 
-            <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} />
+            {/* <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} /> */}
             <ScrollView nestedScrollEnabled={true} className="flex-1">
                 <View className="flex flex-row justify-between items-center mt-3">
 
@@ -35,6 +35,9 @@ const VerseRead = ({ route }) => {
                     >
                         <Feather name="bookmark" size={30} color="black" />
                     </TouchableOpacity>
+                </View>
+                <View>
+                            
                 </View>
             </ScrollView>
         </View>
