@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.3",
     "@fawazahmed/react-native-read-more": "^3.0.3",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.16",
@@ -25,7 +26,8 @@
     "react-native-reanimated": "^3.8.1",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-swiper": "^1.6.0",
-    "react-native-toast-message": "^2.2.0"
+    "react-native-toast-message": "^2.2.0",
+    "expo-font": "~11.10.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
