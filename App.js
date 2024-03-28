@@ -8,19 +8,23 @@ import Getstarted from './src/Component/Getstarted';
 import Readbook from './src/Component/Readbook';
 import BottomNavigator from './src/Component/BottomNavigator';
 import VerseRead from './src/Screen/VerseRead';
+import { Provider } from 'react-redux';
+import { Store } from './redux/store';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Welcome' screenOptions={{ headerShown: false }}>
-        <Stack.Screen name='Welcome' component={Welcome} />
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Getstarted" component={Getstarted} />
-        <Stack.Screen name="Mainscreen" component={Mainscreen} />
-        <Stack.Screen name="Readbook" component={Readbook} />
-        <Stack.Screen name="VerseRead" component={VerseRead} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Welcome' screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='Welcome' component={Welcome} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Getstarted" component={Getstarted} />
+          <Stack.Screen name="Mainscreen" component={Mainscreen} />
+          <Stack.Screen name="Readbook" component={Readbook} />
+          <Stack.Screen name="VerseRead" component={VerseRead} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
 
   );
 }

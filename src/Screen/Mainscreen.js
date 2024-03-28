@@ -7,10 +7,23 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import Buttomnav from '../Component/Buttomnav';
+import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { setTheme } from '../../redux/action';
 const Mainscreen = () => {
+    const { theme } = useSelector((state) => state.themeReducer)
+    const dispatch = useDispatch()
     const navigation = useNavigation();
+
+    const chageTheme = () => {
+        if (theme == "light") {
+            dispatch(setTheme("dark"))
+        }
+        else {
+            dispatch(setTheme("light"))
+        }
+    }
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: theme == "light" ? "white" : "black" }}>
             {/* <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} /> */}
 
             <ScrollView nestedScrollEnabled={true} className="flex-1">
@@ -37,8 +50,9 @@ const Mainscreen = () => {
                     <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
 
                         {/* For the BookMarks */}
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 10 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 10 }} >
                             <TouchableOpacity
+                                onPress={() => chageTheme()}
                                 style={{
                                     width: hp(7),
                                     height: hp(7),
@@ -74,12 +88,12 @@ const Mainscreen = () => {
                         <ChapterList />
                     </View>
                 </View>
-            </ScrollView>
+            </ScrollView >
 
             {/* <View style={{ position: 'fixed', width: '100%' }}>
                 <Buttomnav />
             </View> */}
-        </View>
+        </View >
     )
 }
 
