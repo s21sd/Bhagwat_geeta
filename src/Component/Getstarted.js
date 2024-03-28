@@ -19,8 +19,9 @@ const Getstarted = () => {
             </View>
 
 
-            <View className="flex justify-between items-center h-[100%]">
-            
+            <View className="flex justify-between items-center h-[100%] bg-[#fbca92]">
+
+
                 <View className="flex justify-center items-center mt-32" >
                     <Image source={require('../../assets/Group 8.png')} />
 

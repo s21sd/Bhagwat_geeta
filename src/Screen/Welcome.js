@@ -8,7 +8,9 @@ const Welcome = () => {
         setTimeout(() => navigation.navigate("Home"), 2500);
     }, [])
     return (
-        <View className="flex-1 justify-center items-center bg-[#FF8600]">
+        <View className="flex-1 justify-center items-center">
+            <Image className="absolute w-full h-full" blurRadius={80} source={require('../../assets/image 2.png')} />
+
             <View>
                 <View>
                     <Image source={require('../../assets/image 1.png')} style={{
