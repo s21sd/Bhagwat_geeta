@@ -23,8 +23,11 @@ const Mainscreen = () => {
         }
     }
     return (
-        <View style={{ flex: 1, backgroundColor: theme == "light" ? "white" : "black" }}>
-            {/* <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} /> */}
+        <View style={{ flex: 1 }}>
+            {
+                theme == "dark" && <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} />
+
+            }
 
             <ScrollView nestedScrollEnabled={true} className="flex-1">
                 <View>
