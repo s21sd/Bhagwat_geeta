@@ -6,10 +6,12 @@ import { Feather } from '@expo/vector-icons';
 import ReadMore from '@fawazahmed/react-native-read-more';
 import axios from 'axios';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useSelector } from 'react-redux';
 const VerseRead = ({ route }) => {
     const { index, chaperNo } = route.params;
     const navigation = useNavigation();
     const [data, setData] = useState({});
+    const { theme } = useSelector((state) => state.themeReducer)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,7 +39,10 @@ const VerseRead = ({ route }) => {
     return (
 
         <View style={{ flex: 1 }}>
-            {/* <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} /> */}
+            {
+                theme == 'dark' && <Image className="absolute w-full h-full" blurRadius={60} source={require('../../assets/Rectangle 7.png')} />
+
+            }
             <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
                 <View className="flex flex-row justify-between items-center mt-3" style={{ flex: 1 }}>
                     <TouchableOpacity
