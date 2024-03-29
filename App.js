@@ -11,8 +11,10 @@ import VerseRead from './src/Screen/VerseRead';
 import { Provider } from 'react-redux';
 import { Store } from './redux/store';
 import Settings from './src/Screen/Settings';
-const Stack = createNativeStackNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function App() {
+  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
   return (
     <Provider store={Store}>
       <NavigationContainer>
@@ -25,6 +27,18 @@ export default function App() {
           <Stack.Screen name="VerseRead" component={VerseRead} />
           <Stack.Screen name="Settings" component={Settings} />
         </Stack.Navigator>
+
+        {/* <Tab.Navigator initialRouteName='Welcome' screenOptions={{ headerShown: false }}>
+          <Tab.Screen name='Welcome' options={{ tabBarStyle: { display: 'none' } }} component={Welcome} />
+          <Tab.Screen name="Home" options={{ tabBarStyle: { display: 'none' } }} component={Home} />
+          <Tab.Screen name="Getstarted" options={{ tabBarStyle: { display: 'none' } }} component={Getstarted} />
+          <Tab.Screen name="Mainscreen" component={Mainscreen} />
+          <Tab.Screen name="Readbook" component={Readbook} />
+          <Tab.Screen name="VerseRead" component={VerseRead} />
+          <Tab.Screen name="Settings" component={Settings} />
+        </Tab.Navigator> */}
+
+
       </NavigationContainer>
     </Provider>
 
